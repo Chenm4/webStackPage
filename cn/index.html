@@ -8,7 +8,8 @@
     <title>html音乐播放器</title>
     <link rel="stylesheet" href="font/iconfont.css">
     <link rel="stylesheet" href="css/style.css">
-
+<!--    2d-->
+    <link rel="stylesheet" type="text/css" href="assets/waifu.css"/>
 
 
     <script async src = "//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" >
@@ -64,7 +65,30 @@
     <meta name="twitter:image" content="http://www.webstack.cc/assets/images/webstack_banner_cn.png">
 </head>
 
-<body class="page-body">
+<body class="page-body" >
+<!--2d-->
+<div class="waifu" style="z-index: 999">
+    <div class="waifu-tips"></div>
+    <canvas id="live2d" width="180" height="140" class="live2d"></canvas>
+    <div class="waifu-tool">
+        <span class="fui-home"></span>
+        <span class="fui-chat"></span>
+        <span class="fui-eye"></span>
+        <span class="fui-user"></span>
+        <span class="fui-photo"></span>
+        <span class="fui-info-circle"></span>
+        <span class="fui-cross"></span>
+    </div>
+</div>
+
+<script src="assets/waifu-tips.js"></script>
+<script src="assets/live2d.js"></script>
+<script type="text/javascript">initModel("assets/")</script>
+
+
+
+
+
 <div id="player">
     <!-- 歌曲信息模块 -->
     <div id="player-content1">
@@ -429,7 +453,7 @@
                             </a>
                             <div class="xe-comment">
                                 <a href="#" class="xe-user-name overflowClip_1">
-                                    <strong>Z-library</strong>
+                                    <strong>z-library</strong>
                                 </a>
                                 <p class="overflowClip_2">全球最大的图书搜索网站</p>
                             </div>
@@ -473,7 +497,7 @@
                     <div class="xe-widget xe-conversations box2 label-info" onclick="window.open('https://stackoverflow.com//', '_blank')" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="https://stackoverflow.com//">
                         <div class="xe-comment-entry">
                             <a class="xe-user-img">
-                                <img data-src="../assets/images/newImage/stackoverflow.webp" class="lozad img-circle" width="40">
+                                <img data-src="../assets/images/newImage/stackoverflow.png" class="lozad img-circle" width="40">
                             </a>
                             <span class="label label-info" data-toggle="tooltip" data-placement="left" title="" data-original-title="Hello I am a Tooltip"></span>
                             <div class="xe-comment">
@@ -4386,6 +4410,18 @@
     <!-- JavaScripts initializations and stuff -->
     <script src="../assets/js/xenon-custom.js"></script>
     <script src="../assets/js/lozad.js"></script>
+
+
+<!--2d-->
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = 'https://haremu.com/'  //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "/live2d/model/tia/model.json");
+</script>
 </body>
 
 </html>
